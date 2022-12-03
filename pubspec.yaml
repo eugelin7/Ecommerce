@@ -1,0 +1,39 @@
+name: ecommerce
+description: A new Flutter project.
+
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=2.18.4 <3.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.2
+
+  flutter_svg: ^1.1.6
+
+
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^2.0.0
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/icons/
+  fonts:
+    - family: MarkPro
+      fonts:
+        - asset: assets/fonts/Mark-Pro.ttf
+          weight: 400
+        - asset: assets/fonts/Mark-Pro-Medium.ttf
+          weight: 500
+        - asset: assets/fonts/Mark-Pro-Bold.ttf
+          weight: 700
+
