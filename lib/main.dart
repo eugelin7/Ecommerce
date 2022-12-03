@@ -18,10 +18,10 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSwatch().copyWith(
           secondary: ThemeColors.kAccentColor,
         ),
-        textTheme: ThemeData.dark().textTheme.apply(
+        textTheme: ThemeData.light().textTheme.apply(
               fontFamily: 'MarkPro',
             ),
-        primaryTextTheme: ThemeData.dark().textTheme.apply(
+        primaryTextTheme: ThemeData.light().textTheme.apply(
               fontFamily: 'MarkPro',
             ),
       ),

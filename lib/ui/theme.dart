@@ -6,7 +6,10 @@ abstract class ThemeColors {
   static const kAccentColor = Color(0xFFFF6E4E);
   static const kSectionItemBackColor = Colors.white;
   static const kSectionItemIconColor = Color(0xFFB3B3C3);
+  static const kHotSalesTextColor = Colors.white;
 }
+
+const kContentPadding = 17.0;
 
 const kSearchFieldBorderRadius = 30.0;
 const kSearchFieldFillColor = Colors.white;
@@ -46,3 +49,5 @@ final kDefaultBoxShadow = BoxShadow(
   blurRadius: 10,
   spreadRadius: 0,
 );
+
+const kCarouselItemBorderRadius = 10.0;

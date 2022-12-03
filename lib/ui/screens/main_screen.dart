@@ -1,6 +1,6 @@
-import 'package:ecommerce/ui/theme.dart';
 import 'package:ecommerce/ui/widgets/main_screen/bottom_nav_panel.dart';
 import 'package:ecommerce/ui/widgets/main_screen/categories_section.dart';
+import 'package:ecommerce/ui/widgets/main_screen/hot_sales_section.dart';
 import 'package:ecommerce/ui/widgets/main_screen/search_section.dart';
 import 'package:flutter/material.dart';
 
@@ -19,8 +19,10 @@ class MainScreen extends StatelessWidget {
               children: const [
                 SizedBox(width: double.infinity, height: 42),
                 CategoriesSection(),
-                SizedBox(height: 22),
+                SizedBox(height: 23),
                 SearchSection(),
+                SizedBox(height: 23),
+                HotSalesSection(),
               ],
             ),
           ),

@@ -14,7 +14,8 @@ dependencies:
   cupertino_icons: ^1.0.2
 
   flutter_svg: ^1.1.6
-
+  carousel_slider: ^4.1.1
+  cached_network_image: ^3.2.3
 
 
 dev_dependencies:
@@ -22,6 +23,7 @@ dev_dependencies:
     sdk: flutter
 
   flutter_lints: ^2.0.0
+
 
 flutter:
   uses-material-design: true
@@ -36,4 +38,11 @@ flutter:
           weight: 500
         - asset: assets/fonts/Mark-Pro-Bold.ttf
           weight: 700
-
+    - family: SFProDisplay
+      fonts:
+        - asset: assets/fonts/SF-Pro-Display.ttf
+          weight: 400
+        - asset: assets/fonts/SF-Pro-Display-Medium.ttf
+          weight: 500
+        - asset: assets/fonts/SF-Pro-Display-Bold.ttf
+          weight: 700

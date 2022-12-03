@@ -1,6 +1,7 @@
 import 'package:ecommerce/data/categories.dart';
 import 'package:ecommerce/ui/theme.dart';
 import 'package:ecommerce/ui/widgets/main_screen/category_item.dart';
+import 'package:ecommerce/ui/widgets/main_screen/section_title.dart';
 import 'package:flutter/material.dart';
 
 class CategoriesSection extends StatefulWidget {
@@ -26,28 +27,10 @@ class _CategoriesSectionState extends State<CategoriesSection> {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 17),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: const [
-              Text('Select Category',
-                  style: TextStyle(
-                    color: ThemeColors.kPrimaryTextColor,
-                    fontSize: 25,
-                    fontWeight: FontWeight.bold,
-                  )),
-              Text('view all',
-                  style: TextStyle(
-                    color: ThemeColors.kAccentColor,
-                    fontSize: 15,
-                  )),
-            ],
-          ),
-        ),
+        const SectionTitle(title: 'Select Category', actionTitle: 'view all'),
         const SizedBox(height: 10),
         Padding(
-          padding: const EdgeInsets.only(left: 17),
+          padding: const EdgeInsets.only(left: kContentPadding),
           child: Container(
             width: double.infinity,
             height: 110,
