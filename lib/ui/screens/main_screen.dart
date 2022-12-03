@@ -1,3 +1,4 @@
+import 'package:ecommerce/ui/widgets/main_screen/best_sellers_section.dart';
 import 'package:ecommerce/ui/widgets/main_screen/bottom_nav_panel.dart';
 import 'package:ecommerce/ui/widgets/main_screen/categories_section.dart';
 import 'package:ecommerce/ui/widgets/main_screen/hot_sales_section.dart';
@@ -22,7 +23,12 @@ class MainScreen extends StatelessWidget {
                 SizedBox(height: 23),
                 SearchSection(),
                 SizedBox(height: 23),
-                HotSalesSection(),
+                // HotSalesSection(),
+                // SizedBox(height: 23),
+                Expanded(
+                  child: BestSellersSection(),
+                ),
+                SizedBox(height: 72),
               ],
             ),
           ),

@@ -7,6 +7,7 @@ abstract class ThemeColors {
   static const kSectionItemBackColor = Colors.white;
   static const kSectionItemIconColor = Color(0xFFB3B3C3);
   static const kHotSalesTextColor = Colors.white;
+  static const kBestSellerOldPriceColor = Color(0xFFCCCCCC);
 }
 
 const kContentPadding = 17.0;
@@ -48,6 +49,18 @@ final kDefaultBoxShadow = BoxShadow(
   color: Colors.black.withOpacity(0.08),
   blurRadius: 10,
   spreadRadius: 0,
+);
+
+final kDefaultBoxShadowWeak = BoxShadow(
+  color: Colors.black.withOpacity(0.05),
+  blurRadius: 10,
+  spreadRadius: 0,
+);
+
+final kDefaultBoxShadowStrong = BoxShadow(
+  color: Colors.black.withOpacity(0.12),
+  blurRadius: 12,
+  spreadRadius: 2,
 );
 
 const kCarouselItemBorderRadius = 10.0;

@@ -1,5 +1,4 @@
 import 'dart:convert';
-
 import 'package:ecommerce/=models=/hot_sales_item.dart';
 
 const _jsonString = '''

@@ -52,6 +52,8 @@ class CarouselItem extends StatelessWidget {
                 const SizedBox(height: 18),
                 Text(
                   item.title,
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
                   style: const TextStyle(
                     fontFamily: 'SFProDisplay',
                     color: ThemeColors.kHotSalesTextColor,
@@ -62,6 +64,8 @@ class CarouselItem extends StatelessWidget {
                 const SizedBox(height: 6),
                 Text(
                   item.subtitle,
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
                   style: const TextStyle(
                     fontFamily: 'SFProDisplay',
                     color: ThemeColors.kHotSalesTextColor,
