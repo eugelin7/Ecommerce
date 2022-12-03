@@ -2,13 +2,13 @@ import 'package:ecommerce/ui/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-class IconNavButton extends StatelessWidget {
+class NavIconButton extends StatelessWidget {
   static const size = 44.0;
   static const iconSize = 18.0;
 
   final String iconName;
 
-  const IconNavButton({super.key, required this.iconName});
+  const NavIconButton({super.key, required this.iconName});
 
   @override
   Widget build(BuildContext context) {

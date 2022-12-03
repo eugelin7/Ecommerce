@@ -35,14 +35,7 @@ class CategoryItem extends StatelessWidget {
                 borderRadius: const BorderRadius.all(
                   Radius.circular(size),
                 ),
-                boxShadow: [
-                  if (!isSelected)
-                    BoxShadow(
-                      color: Colors.black.withOpacity(0.08),
-                      blurRadius: 10,
-                      spreadRadius: 0,
-                    )
-                ],
+                boxShadow: [if (!isSelected) kDefaultBoxShadow],
               ),
               child: SvgPicture.asset(
                 'assets/icons/${item.name.toLowerCase()}.svg',
@@ -70,7 +63,7 @@ class CategoryItem extends StatelessWidget {
             )
           ],
         ),
-        const SizedBox(height: 6),
+        const SizedBox(height: 7),
         SizedBox(
           //color: Colors.transparent,
           width: size + 1,
@@ -81,8 +74,8 @@ class CategoryItem extends StatelessWidget {
               maxLines: 1,
               overflow: TextOverflow.ellipsis,
               style: TextStyle(
-                  fontSize: 13,
-                  letterSpacing: -0.1,
+                  fontSize: 12.5,
+                  letterSpacing: -0.15,
                   color: isSelected ? ThemeColors.kAccentColor : ThemeColors.kPrimaryTextColor,
                   fontWeight: FontWeight.w500),
             ),

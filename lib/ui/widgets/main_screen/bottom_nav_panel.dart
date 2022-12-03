@@ -1,5 +1,5 @@
 import 'package:ecommerce/ui/theme.dart';
-import 'package:ecommerce/ui/widgets/main_screen/icon_nav_button.dart';
+import 'package:ecommerce/ui/widgets/main_screen/nav_icon_button.dart';
 import 'package:flutter/material.dart';
 
 class BottomNavPanel extends StatelessWidget {
@@ -44,9 +44,9 @@ class BottomNavPanel extends StatelessWidget {
               ],
             ),
             const SizedBox(width: 12),
-            const IconNavButton(iconName: 'shop'),
-            const IconNavButton(iconName: 'favorites'),
-            const IconNavButton(iconName: 'user'),
+            const NavIconButton(iconName: 'shop'),
+            const NavIconButton(iconName: 'favorites'),
+            const NavIconButton(iconName: 'user'),
           ],
         ),
       ),
