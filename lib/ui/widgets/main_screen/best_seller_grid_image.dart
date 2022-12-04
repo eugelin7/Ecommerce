@@ -1,4 +1,5 @@
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:ecommerce/ui/theme.dart';
 import 'package:flutter/material.dart';
 
 class BestSellerGridImage extends StatelessWidget {
@@ -17,7 +18,8 @@ class BestSellerGridImage extends StatelessWidget {
         ),
       ),
       placeholder: (_, __) => const Center(child: CircularProgressIndicator()),
-      errorWidget: (_, __, ___) => const Center(child: Icon(Icons.error, size: 70)),
+      errorWidget: (_, __, ___) =>
+          const Center(child: Icon(Icons.error, size: 70, color: ThemeColors.kErrorIconColor)),
     );
   }
 }

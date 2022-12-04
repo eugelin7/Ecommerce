@@ -1,4 +1,5 @@
 import 'package:ecommerce/ui/theme.dart';
+import 'package:ecommerce/ui/widgets/main_screen/filter_sheet.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -44,7 +45,9 @@ class SearchIconButton extends StatelessWidget {
             borderRadius: const BorderRadius.all(Radius.circular(size)),
             child: InkWell(
               borderRadius: const BorderRadius.all(Radius.circular(size)),
-              onTap: () {},
+              onTap: () {
+                showBottomSheet(context: context, builder: (_) => const FilterSheet());
+              },
             ),
           ),
         )
