@@ -14,6 +14,8 @@ abstract class ThemeColors {
   static const kSearchFieldHintColor = Color(0x80010035);
   static const kDropdownBorderColor = Color(0xFFDCDCDC);
   static const kDropdownIconColor = Color(0xFFB3B3B3);
+  static const kProductInfoColor = Color(0xFFB7B7B7);
+  static const kProductInfoTextColor = Color(0xFF8D8D8D);
 }
 
 const kContentPadding = 17.0;
@@ -80,3 +82,23 @@ const kBottomSheetPadding = 30.0;
 String formatPrice(double price) {
   return NumberFormat.currency(locale: 'en_US', name: '\$', decimalDigits: 0).format(price);
 }
+
+//---
+extension HexColor on Color {
+  static Color fromHex(String hexString) {
+    final buffer = StringBuffer();
+    if (hexString.length == 6 || hexString.length == 7) buffer.write('ff');
+    buffer.write(hexString.replaceFirst('#', ''));
+    return Color(int.parse(buffer.toString(), radix: 16));
+  }
+}
+
+extension InvertedColor on Color {
+  Color invertColor() {
+    final r = 255 - red;
+    final g = 255 - green;
+    final b = 255 - blue;
+    return Color.fromARGB((opacity * 255).round(), r, g, b);
+  }
+}
+//---
