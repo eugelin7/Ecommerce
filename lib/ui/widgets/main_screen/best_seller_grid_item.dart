@@ -3,17 +3,12 @@ import 'package:ecommerce/ui/theme.dart';
 import 'package:ecommerce/ui/widgets/main_screen/best_seller_fav_button.dart';
 import 'package:ecommerce/ui/widgets/main_screen/best_seller_grid_image.dart';
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
 
 class BestSellerGridItem extends StatelessWidget {
   final BestSellerItem item;
   final EdgeInsets margin;
 
   const BestSellerGridItem({super.key, required this.margin, required this.item});
-
-  String _formatPrice(double price) {
-    return NumberFormat.currency(locale: 'en_US', name: '\$', decimalDigits: 0).format(price);
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -47,7 +42,7 @@ class BestSellerGridItem extends StatelessWidget {
                       textBaseline: TextBaseline.alphabetic,
                       children: [
                         Text(
-                          _formatPrice(item.priceWithoutDiscount),
+                          formatPrice(item.priceWithoutDiscount),
                           maxLines: 1,
                           overflow: TextOverflow.ellipsis,
                           style: const TextStyle(
@@ -61,7 +56,7 @@ class BestSellerGridItem extends StatelessWidget {
                           child: Transform.translate(
                             offset: const Offset(0, -1),
                             child: Text(
-                              _formatPrice(item.discountPrice),
+                              formatPrice(item.discountPrice),
                               maxLines: 1,
                               overflow: TextOverflow.ellipsis,
                               style: const TextStyle(

@@ -88,7 +88,7 @@ class CustomDropdown extends StatelessWidget {
                       item,
                       overflow: TextOverflow.ellipsis,
                       maxLines: 1,
-                      style: const TextStyle(fontSize: 14),
+                      style: const TextStyle(fontSize: 16),
                     ),
                   ),
                 ))
@@ -109,7 +109,7 @@ class CustomDropdown extends StatelessWidget {
         iconDisabledColor: ThemeColors.kDropdownIconColor.withOpacity(0.5), //iconDisabledColor,
         buttonHeight: buttonHeight ?? 37,
         buttonWidth: buttonWidth ?? double.infinity,
-        buttonPadding: buttonPadding ?? const EdgeInsets.only(left: 14, right: 14),
+        buttonPadding: buttonPadding ?? const EdgeInsets.only(left: 14, right: 20),
         buttonDecoration: buttonDecoration ??
             BoxDecoration(
               borderRadius: BorderRadius.circular(5),

@@ -1,6 +1,7 @@
+import 'package:ecommerce/data/filter_data.dart';
 import 'package:ecommerce/ui/theme.dart';
-import 'package:ecommerce/ui/widgets/custom_dropdown.dart';
-import 'package:ecommerce/ui/widgets/main_screen/filter_sheet_brand_section.dart';
+import 'package:ecommerce/ui/widgets/main_screen/filter_sheet_dropdown.dart';
+import 'package:ecommerce/ui/widgets/main_screen/filter_sheet_price_range.dart';
 import 'package:ecommerce/ui/widgets/main_screen/filter_sheet_title.dart';
 import 'package:flutter/material.dart';
 
@@ -24,8 +25,17 @@ class FilterSheet extends StatelessWidget {
         children: const [
           SizedBox(width: double.infinity),
           FilterSheetTitle(),
-          SizedBox(height: 39),
-          FilterSheetBrandSection(),
+          SizedBox(height: 42),
+          FilterSheetDropdown(title: 'Brands', items: kBrands, hintText: 'Select brand...'),
+          SizedBox(height: 15),
+          FilterSheetPriceRange(
+            title: 'Price',
+            hintText: 'Select price range...',
+            minValue: 0,
+            maxValue: 10000,
+          ),
+          SizedBox(height: 15),
+          FilterSheetDropdown(title: 'Sizes', items: kSizes, hintText: 'Select size...'),
         ],
       ),
     );

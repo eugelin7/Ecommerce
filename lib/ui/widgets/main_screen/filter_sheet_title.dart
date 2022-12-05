@@ -13,7 +13,7 @@ class FilterSheetTitle extends StatelessWidget {
       children: [
         SizedBox(
           width: MediaQuery.of(context).size.width - kBottomSheetPadding * 2,
-          height: 44,
+          height: 38,
         ),
         const Text(
           'Filter options',

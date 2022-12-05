@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 
 abstract class ThemeColors {
   static const kPrimaryTextColor = Color(0xFF010035);
@@ -75,3 +76,7 @@ final kDefaultBoxShadowHeavy = BoxShadow(
 const kCarouselItemBorderRadius = 10.0;
 
 const kBottomSheetPadding = 30.0;
+
+String formatPrice(double price) {
+  return NumberFormat.currency(locale: 'en_US', name: '\$', decimalDigits: 0).format(price);
+}

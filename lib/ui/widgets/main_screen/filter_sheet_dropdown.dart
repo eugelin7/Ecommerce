@@ -2,16 +2,22 @@ import 'package:ecommerce/ui/theme.dart';
 import 'package:ecommerce/ui/widgets/custom_dropdown.dart';
 import 'package:flutter/material.dart';
 
-const List<String> kBrandItems = ['Samsung', 'Xiaomi', 'Motorola'];
+class FilterSheetDropdown extends StatefulWidget {
+  final String title, hintText;
+  final List<String> items;
 
-class FilterSheetBrandSection extends StatefulWidget {
-  const FilterSheetBrandSection({super.key});
+  const FilterSheetDropdown({
+    super.key,
+    required this.title,
+    required this.hintText,
+    required this.items,
+  });
 
   @override
-  State<FilterSheetBrandSection> createState() => _FilterSheetBrandSectionState();
+  State<FilterSheetDropdown> createState() => _FilterSheetDropdownState();
 }
 
-class _FilterSheetBrandSectionState extends State<FilterSheetBrandSection> {
+class _FilterSheetDropdownState extends State<FilterSheetDropdown> {
   String? _filterValue;
 
   @override
@@ -21,10 +27,10 @@ class _FilterSheetBrandSectionState extends State<FilterSheetBrandSection> {
       child: Column(
         children: [
           Row(
-            children: const [
+            children: [
               Text(
-                'Brand',
-                style: TextStyle(
+                widget.title,
+                style: const TextStyle(
                   color: ThemeColors.kPrimaryTextColor,
                   fontSize: 18,
                   fontWeight: FontWeight.w500,
@@ -34,18 +40,20 @@ class _FilterSheetBrandSectionState extends State<FilterSheetBrandSection> {
           ),
           const SizedBox(height: 6),
           CustomDropdown(
-            hint: 'Select brand',
-            dropdownItems: kBrandItems,
+            hint: widget.hintText,
+            dropdownItems: widget.items,
             dropdownWidth: MediaQuery.of(context).size.width - kBottomSheetPadding * 2 - 2,
             offset: const Offset(1, 0),
             itemHeight: 34,
             value: _filterValue,
             selectedItemBuilder: (context) {
-              return kBrandItems
+              return widget.items
                   .map((item) => Padding(
                         padding: const EdgeInsets.only(top: 5),
                         child: Text(
                           item,
+                          maxLines: 1,
+                          overflow: TextOverflow.ellipsis,
                           style: const TextStyle(
                             color: ThemeColors.kPrimaryTextColor,
                             fontSize: 18,
