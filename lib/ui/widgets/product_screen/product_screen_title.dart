@@ -1,4 +1,3 @@
-import 'package:ecommerce/data/mock_product.dart';
 import 'package:ecommerce/ui/theme.dart';
 import 'package:ecommerce/ui/widgets/rounded_icon_button.dart';
 import 'package:flutter/material.dart';

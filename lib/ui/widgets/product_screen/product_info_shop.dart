@@ -76,7 +76,7 @@ class ProductInfoShop extends StatelessWidget {
             ],
           ),
         ),
-        const SizedBox(height: 28),
+        const SizedBox(height: 30),
         Row(
           children: const [
             SizedBox(width: 16),
@@ -92,7 +92,7 @@ class ProductInfoShop extends StatelessWidget {
             ),
           ],
         ),
-        const SizedBox(height: 10),
+        const SizedBox(height: 14),
         FittedBox(
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.center,

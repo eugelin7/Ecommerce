@@ -2,6 +2,7 @@ import 'package:contained_tab_bar_view/contained_tab_bar_view.dart';
 import 'package:ecommerce/=models=/product.dart';
 import 'package:ecommerce/ui/theme.dart';
 import 'package:ecommerce/ui/widgets/product_screen/product_info_shop.dart';
+import 'package:ecommerce/ui/widgets/product_screen/product_to_cart_button.dart';
 import 'package:ecommerce/ui/widgets/rounded_icon_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
@@ -14,7 +15,7 @@ class ProductInfo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 400,
+      height: 450,
       decoration: BoxDecoration(
         color: ThemeColors.kSectionItemBackColor,
         borderRadius: const BorderRadius.all(
@@ -41,8 +42,9 @@ class ProductInfo extends StatelessWidget {
               ),
               RoundedIconButton(
                 color: ThemeColors.kPrimaryTextColor,
-                svgIconName: 'heart',
-                iconColor: ThemeColors.kNavBarItemColor,
+                svgIconName: product.isFavorites ? 'heart_filled' : 'heart',
+                iconColor:
+                    product.isFavorites ? ThemeColors.kAccentColor : ThemeColors.kNavBarItemColor,
                 iconSize: 13,
                 onTap: () {},
               )
@@ -78,16 +80,15 @@ class ProductInfo extends StatelessWidget {
                     fontFamily: 'MarkPro', fontSize: 20, fontWeight: FontWeight.normal),
               ),
               views: [
-                Container(
-                  color: Colors.yellow.withOpacity(0.1),
-                  child: ProductInfoShop(product: product),
-                ),
+                ProductInfoShop(product: product),
                 const Center(child: Text('Details...', style: TextStyle(color: Colors.black26))),
                 const Center(child: Text('Features...', style: TextStyle(color: Colors.black26))),
               ],
               onChange: (index) {},
             ),
           ),
+          const SizedBox(height: 14),
+          ProductToCartButton(price: product.price.toDouble(), onTap: () {})
         ],
       ),
     );
