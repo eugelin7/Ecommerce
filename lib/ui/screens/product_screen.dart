@@ -1,4 +1,5 @@
 import 'package:ecommerce/data/mock_product.dart';
+import 'package:ecommerce/ui/theme.dart';
 import 'package:ecommerce/ui/widgets/product_screen/product_carousel.dart';
 import 'package:ecommerce/ui/widgets/product_screen/product_info.dart';
 import 'package:ecommerce/ui/widgets/product_screen/product_screen_title.dart';
@@ -13,7 +14,7 @@ class ProductScreen extends StatelessWidget {
       resizeToAvoidBottomInset: false,
       extendBodyBehindAppBar: true,
       body: Container(
-        color: const Color(0xFFF5F5F5),
+        color: ThemeColors.kBackgroundColor,
         child: Column(
           children: [
             const SizedBox(width: double.infinity, height: 52),

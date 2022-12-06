@@ -18,7 +18,8 @@ class CarouselImage extends StatelessWidget {
         ),
       ),
       placeholder: (_, __) => const Center(child: CircularProgressIndicator()),
-      errorWidget: (_, __, ___) => const Center(child: Icon(Icons.error, size: 70)),
+      errorWidget: (_, __, ___) =>
+          const Center(child: Icon(Icons.error, size: 70, color: ThemeColors.kErrorIconColor)),
     );
   }
 }

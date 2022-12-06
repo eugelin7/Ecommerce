@@ -1,3 +1,4 @@
+import 'package:ecommerce/ui/screens/cart_screen.dart';
 import 'package:ecommerce/ui/screens/main_screen.dart';
 import 'package:ecommerce/ui/screens/product_screen.dart';
 import 'package:ecommerce/ui/theme.dart';
@@ -13,11 +14,11 @@ void main() {
     ),
   );
 
-  runApp(const MyApp());
+  runApp(const EcommerceApp());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class EcommerceApp extends StatelessWidget {
+  const EcommerceApp({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -35,7 +36,7 @@ class MyApp extends StatelessWidget {
               fontFamily: 'MarkPro',
             ),
       ),
-      home: const ProductScreen(),
+      home: const CartScreen(),
     );
   }
 }

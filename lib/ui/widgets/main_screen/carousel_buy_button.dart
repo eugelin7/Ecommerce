@@ -41,7 +41,7 @@ class CarouselBuyButton extends StatelessWidget {
             child: InkWell(
               borderRadius: const BorderRadius.all(Radius.circular(6)),
               onTap: () {
-                print('${item.id} ${item.title}');
+                //print('${item.id} ${item.title}');
               },
             ),
           ),

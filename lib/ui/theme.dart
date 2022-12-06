@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
 abstract class ThemeColors {
+  static const kBackgroundColor = Color(0xFFF5F5F5);
   static const kPrimaryTextColor = Color(0xFF010035);
   static const kNavBarItemColor = Colors.white;
   static const kAccentColor = Color(0xFFFF6E4E);
@@ -19,6 +20,7 @@ abstract class ThemeColors {
 }
 
 const kContentPadding = 17.0;
+const kContentBigPadding = 42.0;
 
 const kSearchFieldBorderRadius = 30.0;
 

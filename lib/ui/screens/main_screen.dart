@@ -1,3 +1,4 @@
+import 'package:ecommerce/ui/theme.dart';
 import 'package:ecommerce/ui/widgets/main_screen/best_sellers_section.dart';
 import 'package:ecommerce/ui/widgets/main_screen/bottom_nav_panel.dart';
 import 'package:ecommerce/ui/widgets/main_screen/categories_section.dart';
@@ -14,7 +15,7 @@ class MainScreen extends StatelessWidget {
       body: Stack(
         children: [
           Container(
-            color: const Color(0xFFF5F5F5),
+            color: ThemeColors.kBackgroundColor,
             child: Column(
               children: const [
                 SizedBox(width: double.infinity, height: 42),

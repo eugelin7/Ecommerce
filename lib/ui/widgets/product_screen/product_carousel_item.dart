@@ -20,12 +20,11 @@ class ProductCarouselItem extends StatelessWidget {
             borderRadius: const BorderRadius.all(Radius.circular(10)),
             color: Colors.white,
             boxShadow: [kDefaultBoxShadow],
-
-            //shape: BoxShape.circle,
           ),
         ),
         placeholder: (_, __) => const Center(child: CircularProgressIndicator()),
-        errorWidget: (_, __, ___) => const Center(child: Icon(Icons.error, size: 70)),
+        errorWidget: (_, __, ___) =>
+            const Center(child: Icon(Icons.error, size: 70, color: ThemeColors.kErrorIconColor)),
       ),
     );
   }
