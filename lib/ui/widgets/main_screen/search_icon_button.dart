@@ -45,9 +45,7 @@ class SearchIconButton extends StatelessWidget {
             borderRadius: const BorderRadius.all(Radius.circular(size)),
             child: InkWell(
               borderRadius: const BorderRadius.all(Radius.circular(size)),
-              onTap: () {
-                showBottomSheet(context: context, builder: (_) => const FilterSheet());
-              },
+              onTap: () {},
             ),
           ),
         )

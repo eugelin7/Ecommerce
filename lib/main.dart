@@ -36,7 +36,7 @@ class EcommerceApp extends StatelessWidget {
               fontFamily: 'MarkPro',
             ),
       ),
-      home: const CartScreen(),
+      home: const MainScreen(),
     );
   }
 }
