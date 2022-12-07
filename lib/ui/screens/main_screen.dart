@@ -24,7 +24,7 @@ class MainScreen extends StatelessWidget {
               color: ThemeColors.kBackgroundColor,
               child: Column(
                 children: const [
-                  SizedBox(width: double.infinity, height: 42),
+                  SizedBox(width: double.infinity, height: 52),
                   MainTopRow(),
                   SizedBox(height: 20),
                   CategoriesSection(),
