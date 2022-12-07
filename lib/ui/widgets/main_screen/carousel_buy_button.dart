@@ -1,14 +1,16 @@
 import 'package:ecommerce/=models=/hot_sales_item.dart';
+import 'package:ecommerce/logic/cart_cubit.dart';
 import 'package:ecommerce/ui/theme.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class CarouselBuyButton extends StatelessWidget {
-  static const kButtonWidth = 100.0;
-  static const kButtonHeight = 24.0;
-
   final HotSalesItem item;
 
   const CarouselBuyButton({super.key, required this.item});
+
+  static const kButtonWidth = 100.0;
+  static const kButtonHeight = 24.0;
 
   @override
   Widget build(BuildContext context) {
@@ -42,6 +44,7 @@ class CarouselBuyButton extends StatelessWidget {
               borderRadius: const BorderRadius.all(Radius.circular(6)),
               onTap: () {
                 //print('${item.id} ${item.title}');
+                context.read<CartCubit>().addProductId(item.id);
               },
             ),
           ),

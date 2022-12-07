@@ -1,4 +1,19 @@
-class Product {
+import 'package:equatable/equatable.dart';
+
+class Product with EquatableMixin {
+  final String cpu;
+  final String camera;
+  final List<String> capacity;
+  final List<String> color;
+  final String id;
+  final List<String> images;
+  final bool isFavorites;
+  final int price;
+  final double rating;
+  final String sd;
+  final String ssd;
+  final String title;
+
   Product({
     required this.cpu,
     required this.camera,
@@ -14,18 +29,21 @@ class Product {
     required this.title,
   });
 
-  final String cpu;
-  final String camera;
-  final List<String> capacity;
-  final List<String> color;
-  final String id;
-  final List<String> images;
-  final bool isFavorites;
-  final int price;
-  final double rating;
-  final String sd;
-  final String ssd;
-  final String title;
+  @override
+  List<Object?> get props => [
+        cpu,
+        camera,
+        capacity,
+        color,
+        id,
+        images,
+        isFavorites,
+        price,
+        rating,
+        sd,
+        ssd,
+        title,
+      ];
 
   factory Product.fromJson(Map<String, dynamic> json) => Product(
         cpu: json["CPU"],
@@ -41,19 +59,4 @@ class Product {
         ssd: json["ssd"],
         title: json["title"],
       );
-
-  // Map<String, dynamic> toJson() => {
-  //     "CPU": cpu,
-  //     "camera": camera,
-  //     "capacity": List<dynamic>.from(capacity.map((x) => x)),
-  //     "color": List<dynamic>.from(color.map((x) => x)),
-  //     "id": id,
-  //     "images": List<dynamic>.from(images.map((x) => x)),
-  //     "isFavorites": isFavorites,
-  //     "price": price,
-  //     "rating": rating,
-  //     "sd": sd,
-  //     "ssd": ssd,
-  //     "title": title,
-  // };
 }

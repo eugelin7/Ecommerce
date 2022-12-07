@@ -1,4 +1,4 @@
-import 'package:ecommerce/data/categories.dart';
+import 'package:ecommerce/data/mock/categories.dart';
 import 'package:ecommerce/ui/theme.dart';
 import 'package:ecommerce/ui/widgets/main_screen/category_item.dart';
 import 'package:ecommerce/ui/widgets/main_screen/section_title.dart';

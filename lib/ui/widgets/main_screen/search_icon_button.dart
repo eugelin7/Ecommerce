@@ -1,5 +1,4 @@
 import 'package:ecommerce/ui/theme.dart';
-import 'package:ecommerce/ui/widgets/main_screen/filter_sheet.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 

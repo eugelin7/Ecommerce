@@ -1,4 +1,4 @@
-import 'package:ecommerce/data/best_seller_items.dart';
+import 'package:ecommerce/data/mock/best_seller_items.dart';
 import 'package:ecommerce/ui/theme.dart';
 import 'package:ecommerce/ui/widgets/main_screen/best_seller_grid_item.dart';
 import 'package:ecommerce/ui/widgets/main_screen/section_title.dart';

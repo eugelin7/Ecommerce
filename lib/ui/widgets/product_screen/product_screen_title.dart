@@ -17,7 +17,9 @@ class ProductScreenTitle extends StatelessWidget {
             svgIconName: 'back_arrow',
             iconColor: ThemeColors.kNavBarItemColor,
             iconSize: 14,
-            onTap: () {},
+            onTap: () {
+              Navigator.of(context).pop();
+            },
           ),
           const Text(
             'Product Details',

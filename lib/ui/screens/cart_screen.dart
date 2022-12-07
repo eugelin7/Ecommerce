@@ -4,6 +4,9 @@ import 'package:ecommerce/ui/widgets/cart_screen/cart_screen_title.dart';
 import 'package:flutter/material.dart';
 
 class CartScreen extends StatelessWidget {
+  static const name = 'cart_screen';
+  static const path = '/cart';
+
   const CartScreen({super.key});
 
   @override

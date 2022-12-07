@@ -8,6 +8,9 @@ import 'package:ecommerce/ui/widgets/main_screen/search_section.dart';
 import 'package:flutter/material.dart';
 
 class MainScreen extends StatelessWidget {
+  static const name = 'main_screen';
+  static const path = '/';
+
   const MainScreen({super.key});
 
   @override

@@ -1,4 +1,4 @@
-import 'package:ecommerce/data/mock_cart.dart';
+import 'package:ecommerce/data/mock/mock_cart.dart';
 import 'package:ecommerce/ui/theme.dart';
 import 'package:ecommerce/ui/widgets/cart_screen/cart_checkout_button.dart';
 import 'package:ecommerce/ui/widgets/cart_screen/cart_item_tile.dart';

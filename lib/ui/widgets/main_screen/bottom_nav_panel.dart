@@ -1,6 +1,10 @@
+import 'package:ecommerce/ui/screens/cart_screen.dart';
 import 'package:ecommerce/ui/theme.dart';
+import 'package:ecommerce/ui/widgets/main_screen/cart_indicator.dart';
+import 'package:ecommerce/ui/widgets/main_screen/favs_indicator.dart';
 import 'package:ecommerce/ui/widgets/main_screen/nav_icon_button.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class BottomNavPanel extends StatelessWidget {
   const BottomNavPanel({super.key});
@@ -44,9 +48,28 @@ class BottomNavPanel extends StatelessWidget {
               ],
             ),
             const SizedBox(width: 12),
-            const NavIconButton(iconName: 'shop'),
-            const NavIconButton(iconName: 'favorites'),
-            const NavIconButton(iconName: 'user'),
+            Stack(children: [
+              NavIconButton(
+                iconName: 'shop',
+                onTap: () {
+                  context.pushNamed(CartScreen.name);
+                },
+              ),
+              const Positioned(
+                top: 5,
+                right: 1,
+                child: CartIndicator(),
+              ),
+            ]),
+            Stack(children: [
+              NavIconButton(iconName: 'favorites', onTap: () {}),
+              const Positioned(
+                top: 5,
+                right: 1,
+                child: FavsIndicator(),
+              ),
+            ]),
+            NavIconButton(iconName: 'user', onTap: () {}),
           ],
         ),
       ),

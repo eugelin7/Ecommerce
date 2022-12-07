@@ -1,4 +1,4 @@
-import 'package:ecommerce/data/mock_product.dart';
+import 'package:ecommerce/data/mock/mock_product.dart';
 import 'package:ecommerce/ui/theme.dart';
 import 'package:ecommerce/ui/widgets/product_screen/product_carousel.dart';
 import 'package:ecommerce/ui/widgets/product_screen/product_info.dart';
@@ -6,6 +6,9 @@ import 'package:ecommerce/ui/widgets/product_screen/product_screen_title.dart';
 import 'package:flutter/material.dart';
 
 class ProductScreen extends StatelessWidget {
+  static const name = 'product_screen';
+  static const path = '/product';
+
   const ProductScreen({super.key});
 
   @override

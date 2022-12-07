@@ -3,12 +3,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class NavIconButton extends StatelessWidget {
+  final String iconName;
+  final void Function() onTap;
+
+  const NavIconButton({super.key, required this.iconName, required this.onTap});
+
   static const size = 44.0;
   static const iconSize = 18.0;
-
-  final String iconName;
-
-  const NavIconButton({super.key, required this.iconName});
 
   @override
   Widget build(BuildContext context) {
@@ -35,7 +36,7 @@ class NavIconButton extends StatelessWidget {
               borderRadius: const BorderRadius.all(
                 Radius.circular(size),
               ),
-              onTap: () {},
+              onTap: onTap,
             ),
           ),
         )

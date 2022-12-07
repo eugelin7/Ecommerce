@@ -1,4 +1,4 @@
-import 'package:ecommerce/data/filter_data.dart';
+import 'package:ecommerce/data/mock/filter_data.dart';
 import 'package:ecommerce/ui/theme.dart';
 import 'package:ecommerce/ui/widgets/main_screen/filter_sheet_dropdown.dart';
 import 'package:ecommerce/ui/widgets/main_screen/filter_sheet_price_range.dart';
