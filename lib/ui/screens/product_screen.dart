@@ -1,8 +1,7 @@
-import 'package:ecommerce/data/mock/mock_product.dart';
 import 'package:ecommerce/ui/theme.dart';
-import 'package:ecommerce/ui/widgets/product_screen/product_carousel.dart';
-import 'package:ecommerce/ui/widgets/product_screen/product_info.dart';
+import 'package:ecommerce/ui/widgets/product_screen/product_info_content.dart';
 import 'package:ecommerce/ui/widgets/product_screen/product_screen_title.dart';
+import 'package:ecommerce/ui/widgets/product_screen/product_slider.dart';
 import 'package:flutter/material.dart';
 
 class ProductScreen extends StatelessWidget {
@@ -19,15 +18,13 @@ class ProductScreen extends StatelessWidget {
       body: Container(
         color: ThemeColors.kBackgroundColor,
         child: Column(
-          children: [
-            const SizedBox(width: double.infinity, height: 52),
-            const ProductScreenTitle(),
-            const SizedBox(height: 8),
-            Expanded(
-              child: ProductCarousel(images: kMockProduct.images),
-            ),
-            const SizedBox(height: 10),
-            ProductInfo(product: kMockProduct),
+          children: const [
+            SizedBox(width: double.infinity, height: 52),
+            ProductScreenTitle(),
+            SizedBox(height: 8),
+            Expanded(child: ProductSlider()),
+            SizedBox(height: 10),
+            ProductInfoContent(),
           ],
         ),
       ),

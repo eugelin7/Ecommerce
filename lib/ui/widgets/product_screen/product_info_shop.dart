@@ -80,14 +80,18 @@ class ProductInfoShop extends StatelessWidget {
         Row(
           children: const [
             SizedBox(width: 16),
-            Text(
-              'Select color and capacity',
-              style: TextStyle(
-                fontFamily: 'MarkPro',
-                color: ThemeColors.kPrimaryTextColor,
-                fontWeight: FontWeight.w500,
-                fontSize: 16,
-                letterSpacing: -0.4,
+            Expanded(
+              child: Text(
+                'Select color and capacity',
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
+                style: TextStyle(
+                  fontFamily: 'MarkPro',
+                  color: ThemeColors.kPrimaryTextColor,
+                  fontWeight: FontWeight.w500,
+                  fontSize: 16,
+                  letterSpacing: -0.4,
+                ),
               ),
             ),
           ],

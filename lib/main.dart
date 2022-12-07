@@ -1,5 +1,10 @@
+import 'package:ecommerce/data/i_shop_data_service.dart';
+import 'package:ecommerce/data/implementation/shop_data_servide.dart';
+import 'package:ecommerce/logic/best_sellers_cubit.dart';
 import 'package:ecommerce/logic/cart_cubit.dart';
 import 'package:ecommerce/logic/favs_cubit.dart';
+import 'package:ecommerce/logic/hot_sales_cubit.dart';
+import 'package:ecommerce/logic/product_cubit.dart';
 import 'package:ecommerce/ui/screens/cart_screen.dart';
 import 'package:ecommerce/ui/screens/main_screen.dart';
 import 'package:ecommerce/ui/screens/product_screen.dart';
@@ -18,11 +23,24 @@ void main() {
     ),
   );
 
+  final IShopDataService shopDataService = ShopDataService();
+
   runApp(
     MultiBlocProvider(
       providers: [
+        BlocProvider(
+          create: (_) => HotSalesCubit(shopDataService: shopDataService)..getHotSales(),
+        ),
+        BlocProvider(
+          create: (_) => BestSellersCubit(shopDataService: shopDataService)..getBestSellers(),
+        ),
+        BlocProvider(
+          create: (_) => ProductCubit(shopDataService: shopDataService),
+        ),
+        BlocProvider(
+          create: (_) => CartCubit(shopDataService: shopDataService),
+        ),
         BlocProvider(create: (_) => FavsCubit()),
-        BlocProvider(create: (_) => CartCubit()),
       ],
       child: EcommerceApp(),
     ),

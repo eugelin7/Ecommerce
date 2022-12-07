@@ -7,7 +7,10 @@ class CartIndicator extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final productsCount = context.watch<CartCubit>().state.cartProducts.length;
+    //final productsCount = context.watch<CartCubit>().state.cartProductsIds.length;
+
+    final productsCount =
+        context.select<CartCubit, int>((cubit) => cubit.state.cartProductsIds.length);
 
     if (productsCount == 0) {
       return const SizedBox.shrink();

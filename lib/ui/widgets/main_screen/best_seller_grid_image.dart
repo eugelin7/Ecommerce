@@ -1,5 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:ecommerce/ui/theme.dart';
+import 'package:ecommerce/ui/widgets/circular_indicator.dart';
 import 'package:flutter/material.dart';
 
 class BestSellerGridImage extends StatelessWidget {
@@ -17,7 +18,7 @@ class BestSellerGridImage extends StatelessWidget {
           //borderRadius: const BorderRadius.all(Radius.circular(kCarouselItemBorderRadius)),
         ),
       ),
-      placeholder: (_, __) => const Center(child: CircularProgressIndicator()),
+      placeholder: (_, __) => const Center(child: CircularIndicator()),
       errorWidget: (_, __, ___) =>
           const Center(child: Icon(Icons.error, size: 70, color: ThemeColors.kErrorIconColor)),
     );

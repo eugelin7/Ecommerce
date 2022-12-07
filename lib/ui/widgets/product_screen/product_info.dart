@@ -1,11 +1,15 @@
 import 'package:contained_tab_bar_view/contained_tab_bar_view.dart';
 import 'package:ecommerce/=models=/product.dart';
+import 'package:ecommerce/logic/cart_cubit.dart';
+import 'package:ecommerce/ui/screens/cart_screen.dart';
 import 'package:ecommerce/ui/theme.dart';
 import 'package:ecommerce/ui/widgets/product_screen/product_info_shop.dart';
 import 'package:ecommerce/ui/widgets/product_screen/product_to_cart_button.dart';
 import 'package:ecommerce/ui/widgets/rounded_icon_button.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
+import 'package:go_router/go_router.dart';
 
 class ProductInfo extends StatelessWidget {
   final Product product;
@@ -31,14 +35,16 @@ class ProductInfo extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text(
-                product.title,
-                maxLines: 1,
-                overflow: TextOverflow.ellipsis,
-                style: const TextStyle(
-                    color: ThemeColors.kPrimaryTextColor,
-                    fontSize: 24,
-                    fontWeight: FontWeight.w500),
+              Expanded(
+                child: Text(
+                  product.title,
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
+                  style: const TextStyle(
+                      color: ThemeColors.kPrimaryTextColor,
+                      fontSize: 24,
+                      fontWeight: FontWeight.w500),
+                ),
               ),
               RoundedIconButton(
                 color: ThemeColors.kPrimaryTextColor,
@@ -88,7 +94,13 @@ class ProductInfo extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 14),
-          ProductToCartButton(price: product.price.toDouble(), onTap: () {})
+          ProductToCartButton(
+            price: product.price.toDouble(),
+            onTap: () {
+              context.read<CartCubit>().getCart();
+              context.pushNamed(CartScreen.name);
+            },
+          )
         ],
       ),
     );

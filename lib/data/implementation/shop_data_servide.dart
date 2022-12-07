@@ -3,7 +3,7 @@ import 'package:ecommerce/=models=/product.dart';
 import 'package:ecommerce/=models=/hot_sales_item.dart';
 import 'package:ecommerce/=models=/cart.dart';
 import 'package:ecommerce/=models=/best_seller_item.dart';
-import 'package:ecommerce/data/i_shop_date_service.dart';
+import 'package:ecommerce/data/i_shop_data_service.dart';
 
 class ShopDataService implements IShopDataService {
   static const kMainUrl = 'https://run.mocky.io/v3/654bd15e-b121-49ba-a588-960956b15175';
@@ -26,9 +26,10 @@ class ShopDataService implements IShopDataService {
     }
     try {
       final response = await _dio.get(kMainUrl);
-      final jsonArr = response.data['home_store'] as List<dynamic>;
-      _hotSalesList = jsonArr.map((item) => HotSalesItem.fromJson(item)).toList();
-      _bestSellerList = jsonArr.map((item) => BestSellerItem.fromJson(item)).toList();
+      final jsonArrHS = response.data['home_store'] as List<dynamic>;
+      final jsonArrBS = response.data['best_seller'] as List<dynamic>;
+      _hotSalesList = jsonArrHS.map((item) => HotSalesItem.fromJson(item)).toList();
+      _bestSellerList = jsonArrBS.map((item) => BestSellerItem.fromJson(item)).toList();
       return _hotSalesList;
     } on DioError catch (e) {
       return Future.error(e.message);
@@ -44,9 +45,10 @@ class ShopDataService implements IShopDataService {
     }
     try {
       final response = await _dio.get(kMainUrl);
-      final jsonArr = response.data['best_seller'] as List<dynamic>;
-      _hotSalesList = jsonArr.map((item) => HotSalesItem.fromJson(item)).toList();
-      _bestSellerList = jsonArr.map((item) => BestSellerItem.fromJson(item)).toList();
+      final jsonArrHS = response.data['home_store'] as List<dynamic>;
+      final jsonArrBS = response.data['best_seller'] as List<dynamic>;
+      _hotSalesList = jsonArrHS.map((item) => HotSalesItem.fromJson(item)).toList();
+      _bestSellerList = jsonArrBS.map((item) => BestSellerItem.fromJson(item)).toList();
       return _bestSellerList;
     } on DioError catch (e) {
       return Future.error(e.message);
@@ -56,14 +58,26 @@ class ShopDataService implements IShopDataService {
   }
 
   @override
-  Future<Cart> fetchCart() async {
-    // TODO: implement fetchCart
-    throw UnimplementedError();
+  Future<Product> fetchProduct() async {
+    try {
+      final response = await _dio.get(kProductUrl);
+      return Product.fromJson(response.data);
+    } on DioError catch (e) {
+      return Future.error(e.message);
+    } catch (e) {
+      return Future.error('Network error');
+    }
   }
 
   @override
-  Future<Product> fetchProduct() async {
-    // TODO: implement fetchProduct
-    throw UnimplementedError();
+  Future<Cart> fetchCart() async {
+    try {
+      final response = await _dio.get(kCartUrl);
+      return Cart.fromJson(response.data);
+    } on DioError catch (e) {
+      return Future.error(e.message);
+    } catch (e) {
+      return Future.error('Network error');
+    }
   }
 }

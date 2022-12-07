@@ -1,9 +1,11 @@
 import 'package:ecommerce/=models=/best_seller_item.dart';
+import 'package:ecommerce/logic/product_cubit.dart';
 import 'package:ecommerce/ui/screens/product_screen.dart';
 import 'package:ecommerce/ui/theme.dart';
 import 'package:ecommerce/ui/widgets/main_screen/best_seller_fav_button.dart';
 import 'package:ecommerce/ui/widgets/main_screen/best_seller_grid_image.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 
 class BestSellerGridItem extends StatelessWidget {
@@ -19,6 +21,7 @@ class BestSellerGridItem extends StatelessWidget {
         GestureDetector(
           onTap: () {
             //print(item.id);
+            context.read<ProductCubit>().getProduct();
             context.pushNamed(ProductScreen.name);
           },
           child: Container(

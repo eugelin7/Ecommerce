@@ -1,5 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:ecommerce/ui/theme.dart';
+import 'package:ecommerce/ui/widgets/circular_indicator.dart';
 import 'package:flutter/material.dart';
 
 class CartItemImage extends StatelessWidget {
@@ -21,7 +22,7 @@ class CartItemImage extends StatelessWidget {
           color: Colors.white,
         ),
       ),
-      placeholder: (_, __) => const Center(child: CircularProgressIndicator()),
+      placeholder: (_, __) => const Center(child: CircularIndicator()),
       errorWidget: (_, __, ___) => const Center(
         child: Icon(Icons.error, size: 50, color: ThemeColors.kErrorIconColor),
       ),

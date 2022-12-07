@@ -29,8 +29,21 @@ class ProductToCartButton extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                const Text('Add to cart', style: kTextStyle),
-                Text(formatPrice(price), style: kTextStyle),
+                const Expanded(
+                  child: Text(
+                    'Add to cart',
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
+                    style: kTextStyle,
+                  ),
+                ),
+                Expanded(
+                  child: Text(
+                    formatPrice(price),
+                    textAlign: TextAlign.end,
+                    style: kTextStyle,
+                  ),
+                ),
               ],
             ),
           ),

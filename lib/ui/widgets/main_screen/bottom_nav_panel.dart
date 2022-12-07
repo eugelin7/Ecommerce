@@ -1,9 +1,11 @@
+import 'package:ecommerce/logic/cart_cubit.dart';
 import 'package:ecommerce/ui/screens/cart_screen.dart';
 import 'package:ecommerce/ui/theme.dart';
 import 'package:ecommerce/ui/widgets/main_screen/cart_indicator.dart';
 import 'package:ecommerce/ui/widgets/main_screen/favs_indicator.dart';
 import 'package:ecommerce/ui/widgets/main_screen/nav_icon_button.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 
 class BottomNavPanel extends StatelessWidget {
@@ -52,6 +54,7 @@ class BottomNavPanel extends StatelessWidget {
               NavIconButton(
                 iconName: 'shop',
                 onTap: () {
+                  context.read<CartCubit>().getCart();
                   context.pushNamed(CartScreen.name);
                 },
               ),
